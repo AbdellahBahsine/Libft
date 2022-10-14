@@ -16,12 +16,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	printf("%d", ft_memcmp("c", "a", 1));
-	printf("%d", memcmp("c", "a", 1));
-}
