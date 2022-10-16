@@ -25,9 +25,3 @@ char *ft_strjoin(char const *s1, char const *s2)
     return (str_join);
 }
 
-#include <stdio.h>
-
-int main()
-{
-    printf("%s", ft_strjoin("John", " Doe"));
-}

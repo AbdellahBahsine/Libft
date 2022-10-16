@@ -1,4 +1,4 @@
-#include <unistd.h>
+/*#include <unistd.h>
 
 void ft_putnbr_fd(int n, int fd)
 {
@@ -18,3 +18,5 @@ int main()
 {
     ft_putnbr_fd("hello world", 1);
 }
+
+*/

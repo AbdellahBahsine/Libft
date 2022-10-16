@@ -1,11 +1,5 @@
 #include "libft.h"
 
-char func(unsigned int num, char c)
-{
-     c += 32;
-     return c;
-}
-
 char *ft_strmapi(char const *s, char (*f)(unsigned
 int, char))
 {
@@ -22,9 +16,3 @@ int, char))
     return (ptr);
 }
 
-#include <stdio.h>
-
-int main()
-{
-    printf("%s", ft_strmapi("abdellah", func));
-}

@@ -66,9 +66,3 @@ char *ft_itoa(int n)
     return is_negative(n, temp, temp2, len, result, i);
 }
 
-#include <stdio.h>
-
-int main() {
-
-  printf("%s", ft_itoa(457));
-}
