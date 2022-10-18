@@ -6,13 +6,8 @@ void    *ft_calloc(size_t count, size_t size)
     char *ptr;
     i = 0;
     ptr = malloc((count) * size);
-    if (count >= SIZE_MAX || size >= SIZE_MAX)
-        return NULL;
-    while(i < count)
-    {
-        ptr[i] = 0;
-        i++;
-    }
-    ptr[i] = '\0';
+    if (!ptr || count >= SIZE_MAX || size >= SIZE_MAX)
+            return (NULL);
+    ft_bzero(ptr, count * size);
     return (ptr);
 }

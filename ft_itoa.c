@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int count_length(int n)
+static int count_length(int n)
 {
     int i;
     i = 0;
@@ -12,12 +12,28 @@ int count_length(int n)
     return i;
 }
 
-char *is_negative(int n, int temp, int temp2, int len, char *result, int i)
+static char *is_positive(int temp, int temp2, int len, char *result, int i)
 {
-    if (n < 0)
+    result = malloc((len + 1) * sizeof(char));
+    if (!result)
+        return (NULL);
+    while(temp2)
     {
+        temp = temp2 % 10;
+        temp2 = temp2 / 10;
+        result[--len] = temp + 48;
+        i++;
+    }
+    result[i] = '\0';
+    return (result);
+}
+
+static char *is_negative(int temp, int temp2, int len, char *result, int i)
+{
         temp2 *= -1;
         result = malloc((len + 2) * sizeof(char));
+        if (!result)
+            return (NULL);
         while(temp2)
         {
             if(i == 0)
@@ -31,20 +47,7 @@ char *is_negative(int n, int temp, int temp2, int len, char *result, int i)
           i++;
         }
         result[i] = '\0';
-    } 
-    else
-    {
-        result = malloc((len + 1) * sizeof(char));
-        while(temp2)
-        {
-            temp = temp2 % 10;
-            temp2 = temp2 / 10;
-            result[--len] = temp + 48;
-            i++;
-        }
-        result[i] = '\0';
-    }
-    return result;
+    return (result);
 }
 
 char *ft_itoa(int n)
@@ -63,6 +66,9 @@ char *ft_itoa(int n)
         return ft_strdup("0");
     if (n == -2147483648)
         return ft_strdup("-2147483648");
-    return is_negative(n, temp, temp2, len, result, i);
+    if (n < 0)
+        return is_negative(temp, temp2, len, result, i);
+    else
+        return is_positive(temp, temp2, len, result, i);
 }
 

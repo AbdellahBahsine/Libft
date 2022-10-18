@@ -4,12 +4,19 @@ int count_delimiters(char const *s, char c, int len)
 {
     int i;
     int sum;
-    sum = 1;
+    int is_delimiter;
+    is_delimiter = -1;
+    sum = 0;
     i = 0;
     while(s[i])
     {
-        if (s[i] == c && i < len)
-            sum++;
+        if (s[i] != c && i < len && is_delimiter < 0)
+        {
+          sum++;
+          is_delimiter = 0;
+        } 
+        else if (s[i] == c && is_delimiter >= 0)
+          is_delimiter = -1;
         i++;
     }
     return (sum);
@@ -39,11 +46,13 @@ char **ft_split(char const *s, char c)
     int i;
     int j;
     int start;
+    if (!s)
+        return NULL;
     start = -1;
     i = 0;
     j = 0;
     len = ft_strlen(s);
-    res = malloc((count_delimiters(s, c, len) + 1) * sizeof(char *));
+    res = ft_calloc((count_delimiters(s, c, len) + 1), sizeof(char *));
     if (!res)
         return NULL;
     while(i <= len)
@@ -57,6 +66,5 @@ char **ft_split(char const *s, char c)
         }
         i++;
     }
-    res[j] = 0;
     return (res);
 }

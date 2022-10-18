@@ -7,6 +7,8 @@ int, char))
     int i;
     i = 0;
     ptr = malloc((ft_strlen(s) + 1) * sizeof(char));
+    if (!ptr)
+            return (NULL);
     while(s[i])
     {
         ptr[i] = f(i, s[i]);
