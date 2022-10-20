@@ -6,11 +6,11 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:53:06 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/20 18:53:59 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/20 20:03:07 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfth.h"
+#include "libft.h"
 #include <stdlib.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
