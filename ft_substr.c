@@ -24,3 +24,11 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
         sub_str[i] = '\0';
     return (sub_str);
 }
+
+#include <stdio.h>
+
+int main()
+{
+    char * s = ft_substr("tripouille",0 , 42000);
+    printf("%s", s);
+}
