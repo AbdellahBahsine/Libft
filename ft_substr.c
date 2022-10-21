@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:26:32 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/20 19:33:52 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:16:22 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub_str);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main()
-// {
-//     char * s = ft_substr("tripouille",0 , 42000);
-//     printf("%s", s);
-// }
+int main()
+{
+    char * s = ft_substr("tripouille",0 , 42000);
+    printf("%s", s);
+}

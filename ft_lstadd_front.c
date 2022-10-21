@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:23:53 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/20 18:23:54 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:29:59 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,30 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-    (*lst)->next = new;
+    new->next = (*lst);
+    (*lst) = new;
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-    t_list **lst = NULL; 
-    t_list *new = NULL;
-    (*lst)->content = "heyy";
-    ft_lstadd_front(lst, new);
+// int main()
+// {
+//     char *ptr1 ="Head BRO";
+//     char *ptr2 ="lst BRO";
+//     char *ptr3 = "New BRO";
+//     t_list *head = malloc(sizeof(t_list));
+//     head->content =ptr1;
+//     head->next = NULL;
 
-    printf("%s", (*lst)->content);
-}
+//     t_list *lst = malloc(sizeof(t_list));
+//     lst->content = ptr2;
+//     lst->next = NULL;
+
+//     head->next = lst;
+
+//     t_list *new = malloc(sizeof(t_list));
+//     new->content =ptr3;
+//     new->next = NULL;
+
+//     ft_lstadd_front(head, new);
+// }

@@ -17,7 +17,7 @@ t_list *ft_lstnew(void *content)
 // int main()
 // {
 //     t_list *ptr1;
-//     ptr1 = ft_lstnew("hello");
+//     ptr1 = ft_lstnew("BROO");
 //     printf("%s", ptr1->content);
-//     printf("%s", ptr1->next);
+//     //printf("%p", ptr1->next);
 // }
