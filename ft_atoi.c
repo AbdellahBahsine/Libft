@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:02:02 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/20 19:18:34 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/22 15:25:12 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (sum++ > 19 && sign == -1)
+		if (sum++ >= 19 && sign == -1)
 			return (0);
-		else if (sum > 19 && sign == 1)
+		else if (sum >= 19 && sign == 1)
 			return (-1);
 		result = (result * 10) + (str[i++] - 48) * sign;
 	}
