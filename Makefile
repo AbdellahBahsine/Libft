@@ -21,7 +21,7 @@ bonus: $(OBFILES)
 	@$(CC) $(CFLAGS) -c $^
 
 clean:
-	@rm -f $(OFILES)
+	@rm -f $(OFILES) $(OBFILES)
 
 fclean: clean
 	@rm -f $(NAME)

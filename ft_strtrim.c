@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:36:34 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/20 20:21:50 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/24 09:49:24 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		len;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	end = 0;
 	len = ft_strlen(s1);

@@ -6,13 +6,13 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:25:51 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/20 21:06:07 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:27:10 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_delimiters(char const *s, char c, int len)
+static int	count_delimiters(char const *s, char c, int len)
 {
 	int	i;
 	int	sum;
@@ -35,13 +35,13 @@ int	count_delimiters(char const *s, char c, int len)
 	return (sum);
 }
 
-char	*split_array(char const *s, int start, int end)
+static char	*split_array(char const *s, int start, int end)
 {
 	char	*ptr;
 	int		i;
 
 	i = 0;
-	ptr = malloc((end - start + 1) * sizeof(char));
+	ptr = ft_calloc((end - start + 1), sizeof(char));
 	if (!ptr)
 		return (NULL);
 	while (start < end)
@@ -49,11 +49,10 @@ char	*split_array(char const *s, int start, int end)
 		ptr[i] = s[start++];
 		i++;
 	}
-	ptr[i] = '\0';
 	return (ptr);
 }
 
-char	**split(char const *s, char c, char **res, int len)
+static char	**split(char const *s, char c, char **res, int len)
 {
 	int	i;
 	int	j;
@@ -79,7 +78,7 @@ char	**split(char const *s, char c, char **res, int len)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		len;
+	int		len; 
 
 	if (!s)
 		return (NULL);

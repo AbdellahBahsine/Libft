@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:02:02 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/22 15:25:12 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/25 18:55:01 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	int	result;
+	long	result;
 	int	sum;
 
 	result = 0;
@@ -32,11 +32,11 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (sum++ >= 19 && sign == -1)
-			return (0);
-		else if (sum >= 19 && sign == 1)
+		if (result > 2147483647 && sign == 1)
 			return (-1);
+		else if (result > 2147483648 && sign == -1)
+			return (0);
 		result = (result * 10) + (str[i++] - 48) * sign;
 	}
-	return (result);
+	return ((int)result);
 }

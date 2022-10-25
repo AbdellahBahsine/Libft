@@ -1,23 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 19:13:25 by abahsine          #+#    #+#             */
+/*   Updated: 2022/10/25 19:26:50 by abahsine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *str = (t_list *)malloc(sizeof(t_list)); // sizeof(t_list) means that you tell malloc to allocate memory equal to the size of t_list
-    // We typecasted because malloc will return a void pointer but we want a type t_list pointer
-    if (!str)
-        return NULL;
-    str->content = content;
-    str->next = NULL;
-    return str;
+	t_list	*str;
+
+	str = (t_list *)malloc(sizeof(t_list));
+	if (!str)
+		return (NULL);
+	str->content = content;
+	str->next = NULL;
+	return (str);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-//     t_list *ptr1;
-//     ptr1 = ft_lstnew("BROO");
-//     printf("%s", ptr1->content);
-//     //printf("%p", ptr1->next);
-// }
