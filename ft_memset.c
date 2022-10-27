@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:28:09 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/25 10:24:50 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/26 11:47:09 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*char_b;
 
 	char_b = b;

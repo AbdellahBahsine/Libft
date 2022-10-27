@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:26:42 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/23 19:56:46 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:05:33 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isprint(int c)
 	if (c < 256)
 	{
 		if ((unsigned char)c > 31 && (unsigned char)c <= 126)
-		return (1);
+			return (1);
 	}
 	return (0);
 }

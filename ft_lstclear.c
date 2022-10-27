@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:13:45 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/25 19:21:15 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:13:38 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!(*lst) || !del)
+	if (!lst || !del)
 		return ;
 	temp = (*lst);
 	while (temp != NULL)

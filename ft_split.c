@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:25:51 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/25 16:27:10 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:07:17 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,25 @@ static char	*split_array(char const *s, int start, int end)
 	return (ptr);
 }
 
+static	void	*free_memory(char **res)
+{
+	int	j;
+
+	j = 0;
+	while (res[j] != NULL)
+		j++;
+	while (j--)
+		free(res[j]);
+	free(res);
+	return (NULL);
+}
+
 static char	**split(char const *s, char c, char **res, int len)
 {
-	int	i;
-	int	j;
-	int	start;
+	int		i;
+	int		j;
+	int		start;
+	char	*str;
 
 	i = 0;
 	j = 0;
@@ -67,7 +81,11 @@ static char	**split(char const *s, char c, char **res, int len)
 			start = i;
 		else if ((s[i] == c || i == len) && start >= 0)
 		{
-			res[j++] = split_array(s, start, i);
+			str = split_array(s, start, i);
+			if (!str)
+				return (free_memory(res));
+			else
+				res[j++] = str;
 			start = -1;
 		}
 		i++;
@@ -78,7 +96,7 @@ static char	**split(char const *s, char c, char **res, int len)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		len; 
+	int		len;
 
 	if (!s)
 		return (NULL);

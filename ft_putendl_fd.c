@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 21:32:28 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/24 09:51:24 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:06:15 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s || !fd)
-		return;
+		return ;
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
