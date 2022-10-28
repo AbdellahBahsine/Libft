@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:02:02 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/27 10:48:21 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/27 14:36:06 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_atoi(const char *str)
 	{
 		result = (result * 10) + (str[i++] - 48) * sign;
 	}
-	return ((int)result);
+	return (result);
 }

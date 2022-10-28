@@ -6,7 +6,7 @@
 /*   By: abahsine <abahsine@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:13:35 by abahsine          #+#    #+#             */
-/*   Updated: 2022/10/26 12:30:55 by abahsine         ###   ########.fr       */
+/*   Updated: 2022/10/28 11:07:53 by abahsine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*current;
 
+	if (!lst || !f || !del)
+		return (NULL);
 	new_list = NULL;
 	while (lst != NULL)
 	{
